@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruletka Kob</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <img src="https://www.margonem.pl/_i/pl/logo-mini.png" alt="Logo" class="logo">
+    <div class="container">
+        <div class="wallet-info">
+            <h2>Twój portfel: <span id="wallet-amount">1000000000</span></h2>
+        </div>
+        <h1>Ruletka z Przedmiotami</h1>
+        <div class="cost-info">
+            Koszt zakręcenia: 50 000 000
+        </div>
+        <div class="ruletka-container">
+            <div class="wskaznik"></div>
+            <div id="ruletka"></div>
+        </div>
+        <button onclick="zakrecRuletka()">Zakręć!</button>
+        <div id="wynik"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
