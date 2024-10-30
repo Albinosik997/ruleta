@@ -1,0 +1,254 @@
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('https://forum.margonem.pl/img/paper_05.png');
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    
+    
+}
+
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.wallet-info {
+    background-color: #2c3e50;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.wallet-info h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+#wallet-amount {
+    color: #2ecc71;
+    font-weight: bold;
+}
+
+.cost-info {
+    background-color: #34495e;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.ruletka-container {
+    width: 600px;
+    height: 160px;
+    margin: 0 auto 30px;
+    overflow: hidden;
+    position: relative;
+    background: #fff;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#ruletka {
+    display: flex;
+    transition: transform 0.05s linear;
+    padding: 10px;
+    height: 160px;
+    position: relative;
+    background: #fff;
+}
+
+.wskaznik {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, 
+        rgba(255,0,0,0.8) 0%,
+        rgba(255,0,0,0.8) 10%,
+        rgba(255,0,0,0.3) 45%,
+        rgba(255,0,0,0.3) 55%,
+        rgba(255,0,0,0.8) 90%,
+        rgba(255,0,0,0.8) 100%
+    );
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.wskaznik::before,
+.wskaznik::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+}
+
+.wskaznik::before {
+    top: -8px;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid red;
+}
+
+.wskaznik::after {
+    bottom: -8px;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid red;
+}
+
+.przedmiot {
+    min-width: 100px;
+    height: 140px;
+    padding: 10px;
+    text-align: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    border-right: 1px solid #ccc;
+}
+
+.przedmiot:last-child {
+    border-right: none;
+}
+
+.obrazek {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+}
+
+.nazwa {
+    font-size: 12px;
+    margin-top: 5px;
+    line-height: 1.2;
+    max-height: 2.4em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+button {
+    margin: 20px 0;
+    padding: 15px 30px;
+    font-size: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+button:hover:not(:disabled) {
+    background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+    opacity: 0.7;
+}
+
+/* Style dla różnych rzadkości */
+.rzadkosci-zwykly {
+    background-color: #f0f0f0;
+}
+
+.rzadkosci-unikat {
+    background-color: #e0ffe0;
+}
+
+.rzadkosci-heroiczny {
+    background-color: #e3f2fd;
+}
+
+.rzadkosci-legendarny {
+    background-color: #fce4ec;
+}
+
+/* Style dla wyniku */
+#wynik {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.wynik-container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-top: 20px;
+}
+
+.przedmiot-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 15px;
+}
+
+.obrazek-wynik {
+    width: 96px;
+    height: 96px;
+    object-fit: contain;
+}
+
+.przedmiot-details {
+    flex-grow: 1;
+    text-align: left;
+}
+
+.przedmiot-nazwa {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.przedmiot-wartosc,
+.przedmiot-rzadkosc {
+    font-size: 14px;
+    margin: 4px 0;
+    color: #666;
+}
+
+.profit-info {
+    color: #27ae60;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 10px;
+    padding: 5px;
+    background-color: #f0fff0;
+    border-radius: 4px;
+}
